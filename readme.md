@@ -1,31 +1,31 @@
-data structures:
-Suppliers  ↓
-           |-> business name (string)
-           |-> Main business (Office supplies, pc hardware, furniture...)
-           |-> website (string)
-           |-> annotations (string)
-           |-> Contacts (object) ↓ 
-                       |-> Telephone (string)
-                       |-> Email (string)
-                       |-> Address (string)
-           |- Products (object) ↓
-                       |-> Product name (string)
-                       |-> Price (number)
-                       |-> Current stock (number)
-                       |-> 
-           
-
-user accounts roles:
-admin - ↓
-        |-> crud suppliers
-        |-> crud contacts
-        |-> crud produtcs
-        (inherits) purchasing manager ↓
-                         |-> crud cotations
-                         |-> consult cotations
-
-
-
+data structures: <br>
+Suppliers  ↓  
+           |-> business name (string)  
+           |-> Main business (Office supplies, pc hardware, furniture...)  
+           |-> website (string)  
+           |-> annotations (string)  
+           |-> Contacts (object) ↓   
+                       |-> Telephone (string)  
+                       |-> Email (string)  
+                       |-> Address (string)  
+           |- Products (object) ↓  
+                       |-> Product name (string)  
+                       |-> Price (number)  
+                       |-> Current stock (number)  
+                       |->   
+             
+  
+user accounts roles:  
+admin - ↓  
+        |-> crud suppliers  
+        |-> crud contacts  
+        |-> crud produtcs  
+        (inherits) purchasing manager ↓  
+                         |-> crud cotations  
+                         |-> consult cotations  
+  
+  
+  
 AT - Desenvolvimento Web com React
 Construir uma aplicação React que implemente o Sistema de Compras do Infnet, conforme elaborado nas aulas.
 

@@ -19,20 +19,20 @@ export function AuthProvider({ children }) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     
+
+
+
+
+
+
+
+
+
+
+
+
+
     async function checkIfAdmin(user) {
         if ( user ){
         try {

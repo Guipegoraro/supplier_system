@@ -1,28 +1,27 @@
-data structures: <br>
-Suppliers  ↓  
-           |-> business name (string)  
-           |-> Main business (Office supplies, pc hardware, furniture...)  
-           |-> website (string)  
-           |-> annotations (string)  
-           |-> Contacts (object) ↓   
-                       |-> Telephone (string)  
-                       |-> Email (string)  
-                       |-> Address (string)  
-           |- Products (object) ↓  
-                       |-> Product name (string)  
-                       |-> Price (number)  
-                       |-> Current stock (number)  
-                       |->   
+| data structures: <br>
+| Suppliers  ↓  
+|           |-> business name (string)  
+|           |-> Main business (Office supplies, pc hardware, furniture...)  
+|           |-> website (string)  
+|           |-> annotations (string)  
+|           |-> Contacts (object) ↓   
+|                       |-> Telephone (string)  
+|                       |-> Email (string)  
+|                       |-> Address (string)  
+|           |- Products (object) ↓  
+|                       |-> Product name (string)  
+|                       |-> Price (number)  
+|                       |-> Current stock (number)  
              
   
-user accounts roles:  
-admin - ↓  
-        |-> crud suppliers  
-        |-> crud contacts  
-        |-> crud produtcs  
-        (inherits) purchasing manager ↓  
-                         |-> crud cotations  
-                         |-> consult cotations  
+| user accounts roles:  
+| admin - ↓  
+|        |-> crud suppliers  
+|        |-> crud contacts  
+|        |-> crud produtcs  
+|        (inherits) purchasing manager ↓  
+|                         |-> crud cotations  
+|                         |-> consult cotations  
   
   
   

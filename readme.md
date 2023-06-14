@@ -1,13 +1,15 @@
-| data structures: <br>
+| data structures:   
 | Suppliers  ↓  
 |           |-> business name (string)  
 |           |-> Main business (Office supplies, pc hardware, furniture...)  
+|           |-> CNPJ
 |           |-> website (string)  
 |           |-> annotations (string)  
 |           |-> Contacts (object) ↓   
 |                       |-> Telephone (string)  
 |                       |-> Email (string)  
-|                       |-> Address (string)  
+|                       |-> Address (string)
+|                       |-> custom (obj) (add n+ opt)  
 |           |- Products (object) ↓  
 |                       |-> Product name (string)  
 |                       |-> Price (number)  

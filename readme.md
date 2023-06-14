@@ -1,3 +1,31 @@
+data structures:
+Suppliers  ↓
+           |-> business name (string)
+           |-> Main business (Office supplies, pc hardware, furniture...)
+           |-> website (string)
+           |-> annotations (string)
+           |-> Contacts (object) ↓ 
+                       |-> Telephone (string)
+                       |-> Email (string)
+                       |-> Address (string)
+           |- Products (object) ↓
+                       |-> Product name (string)
+                       |-> Price (number)
+                       |-> Current stock (number)
+                       |-> 
+           
+
+user accounts roles:
+admin - ↓
+        |-> crud suppliers
+        |-> crud contacts
+        |-> crud produtcs
+        (inherits) purchasing manager ↓
+                         |-> crud cotations
+                         |-> consult cotations
+
+
+
 AT - Desenvolvimento Web com React
 Construir uma aplicação React que implemente o Sistema de Compras do Infnet, conforme elaborado nas aulas.
 
@@ -15,7 +43,7 @@ A solução deve incluir os seguintes requisitos e critérios de correção:
     Implementação do Componente de Login e Criação de Conta (30%).
     Implementação dos Componentes com as telas de Fornecedores e Contatos (60%).
     Implementação dos Componentes com as telas de Produtos e Cotações (90%).
-    Implementaçã do Componente de Layout para navegação da aplicação (100%).
+    Implementação do Componente de Layout para navegação da aplicação (100%).
 
 3. Criar formulários web usando componentes ReactJS
     Implementação da Autenticação e Criação de Conta pelo Firebase (30%).

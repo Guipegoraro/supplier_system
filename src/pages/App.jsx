@@ -1,28 +1,24 @@
-import { useState } from 'react'
-import '../styles/App.css'
-import { Link, Outlet, Route, Routes } from 'react-router-dom'
-import Home from './Home'
-import Fornecedores from './Fornecedores'
-import NotFound from './NotFound'
+import '../styles/App.css';
+import RoutesHandler from '../components/RoutesHandler';
+import RoutesLinks from '../components/RoutesLinks';
+import UserAccount from '../components/UserAccount';
+import { useAuth } from '../contexts/AuthAndDatabase';
+import { useEffect } from 'react';
 function App() {
+
+  const { currentUser, handleSignOut } = useAuth();
+  
+  useEffect(() => {
+    handleSignOut();
+  }, []);
 
 
   return (
     <>
-    <nav>
-      <ul>
-        <li><Link to='/' > Home </Link></li>
-        <li>
-          <Link to='/Fornecedores' > Fornecedores </Link>
-        </li>
-      </ul>
-    </nav>
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/Fornecedores' element={<Fornecedores />} />
-      <Route path='*' element={<NotFound/>} />
-    </Routes>
-    <Outlet  />
+    {currentUser && currentUser.role === 'admin' && <p>you are admin</p>}
+    <UserAccount/>
+    <RoutesLinks/>
+    <RoutesHandler/>
     </>
   )
 }

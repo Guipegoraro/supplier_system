@@ -1,3 +1,7 @@
+
+
+
+// eslint-disable-next-line react/prop-types
 export default function CreateAccount({ handleCreateAccountForm, loading }) {
 
 
@@ -14,7 +18,12 @@ export default function CreateAccount({ handleCreateAccountForm, loading }) {
                 <input required type='text' id='password' name='password' />
                 <label htmlFor='confirmPassword'>Confirm Password:</label>
                 <input required type='text' id='confirmPassword' name='confirmPassword' />
-                <button disabled={loading} type='submit'>Confirm account creation</button>
+                <p>Papel da conta:</p>
+                <label htmlFor='admin'>Administrador:</label>
+                <input type='radio' name='role' id='admin' value='admin'/>
+                <label htmlFor='manager'>Gerente de compras:</label>
+                <input type='radio' name='role' id='manager' value='manager'/>
+                <button disabled={loading} type='submit'>Confirmar criação de conta</button>
             </form>
         </div>
     )

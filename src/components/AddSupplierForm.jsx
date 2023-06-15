@@ -22,8 +22,9 @@ export default function AddSupplierForm({ setShowAddSupplierForm }) {
     products: [
       {
         productName: '',
-        productPrice: '',
+        productPriceBuy: '',
         currentStock: '',
+        productPriceSell: '',
       }
     ],
   });
@@ -145,19 +146,22 @@ export default function AddSupplierForm({ setShowAddSupplierForm }) {
             <button onClick={() => handleDeleteContact(index)}>Excluir contato</button>
           </div>)
         })}
-        {supplierFormData.products.map((contact, index) => {
+        {supplierFormData.products.map((product, index) => {
 
           return (<div className='contactForm' key={index}>
             <h3>Dados do Produto</h3>
 
             <label htmlFor={`productName${index}`}>Nome do produto:</label>
-            <input type='text' name='productName' id={`productName${index}`} value={contact.productName} onChange={(event) => handleProductOnChange(event, index)} />
+            <input type='text' name='productName' id={`productName${index}`} value={product.productName} onChange={(event) => handleProductOnChange(event, index)} />
 
-            <label htmlFor={`productPrice${index}`}>Preço:</label>
-            <input type='text' name='productPrice' id={`productPrice${index}`} value={contact.productPrice} onChange={(event) => handleProductOnChange(event, index)} />
+            <label htmlFor={`productPriceBuy${index}`}>Preço de compra:</label>
+            <input type='text' name='productPrice' id={`productPrice${index}`} value={product.productPriceBuy} onChange={(event) => handleProductOnChange(event, index)} />
+
+            <label htmlFor={`productPriceSell${index}`}>Preço de venda:</label>
+            <input type='text' name='currentStock' id={`productPriceSell${index}`} value={product.productPriceSell} onChange={(event) => handleProductOnChange(event, index)} />
 
             <label htmlFor={`currentStock${index}`}>Estoque atual:</label>
-            <input type='text' name='currentStock' id={`currentStock${index}`} value={contact.currentStock} onChange={(event) => handleProductOnChange(event, index)} />
+            <input type='text' name='currentStock' id={`currentStock${index}`} value={product.currentStock} onChange={(event) => handleProductOnChange(event, index)} />
 
             <button onClick={(index) => handleDeleteProduct(index)}>Excluir produto</button>
           </div>
@@ -165,7 +169,7 @@ export default function AddSupplierForm({ setShowAddSupplierForm }) {
         })}
         <button onClick={handleAddAnotherProduct}>Adicionar mais produtos</button>
         <button onClick={handleAddAnotherContact}>Adicionar mais linhas de contato</button>
-        <button onClick={handleAddSupplierFormSubmit} >Adicionar Fornecedor</button>
+        <button onClick={handleAddSupplierFormSubmit}>Adicionar Fornecedor</button>
       </form>
       <button onClick={() => console.log(supplierFormData)}>log supplier</button>
     </div>

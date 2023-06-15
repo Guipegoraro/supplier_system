@@ -41,14 +41,14 @@ A solução deve incluir os seguintes requisitos e critérios de correção:
     Implementação de links do react-router para montagem do menu de opções (100%)
 
 2. Desenvolver componentes usando React Hooks
-    Implementação do Componente de Login e Criação de Conta (30%).
+    Implementação do Componente de Login e Criação de Conta (30%). OK
     Implementação dos Componentes com as telas de Fornecedores e Contatos (60%).
     Implementação dos Componentes com as telas de Produtos e Cotações (90%).
     Implementação do Componente de Layout para navegação da aplicação (100%).
 
 3. Criar formulários web usando componentes ReactJS
-    Implementação da Autenticação e Criação de Conta pelo Firebase (30%).
-    Implementação de Inclusão e Listagem de Fornecedores (60%).
+    Implementação da Autenticação e Criação de Conta pelo Firebase (30%). OK
+    Implementação de Inclusão e Listagem de Fornecedores (60%). TODO LISTING
     Implementação de Inclusão e Listagem de Contatos (90%).
     Implementação de Exclusão de Fornecedores e Contatos (100%).
 

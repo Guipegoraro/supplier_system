@@ -1,29 +1,29 @@
 <pre>
-| data structures:   
-| Suppliers  ↓  
-|           |-> business name (string)  
-|           |-> Main business (Office supplies, pc hardware, furniture...)  
-|           |-> CNPJ
-|           |-> website (string)  
-|           |-> annotations (string)  
-|           |-> Contacts (array with objects) ↓ (must have option to add as many as the user wants)  
-|                       |-> Telephone (string)  
-|                       |-> Email (string)  
-|                       |-> Address (string))  
-|           |- Products (array with objects) ↓  
-|                       |-> Product name (string)  
-|                       |-> Price (number)  
-|                       |-> Current stock (number)  
+ data structures:   
+ Suppliers  ↓  
+            |-> business name (string)  
+            |-> Main business (Office supplies, pc hardware, furniture...)  
+            |-> CNPJ
+            |-> website (string)  
+            |-> annotations (string)  
+            |-> Contacts (array with objects) ↓ (must have option to add as many as the user wants)  
+                        |-> Telephone (string)  
+                        |-> Email (string)  
+                        |-> Address (string)
+            |- Products (array with objects) ↓  
+                        |-> Product name (string)  
+                        |-> Price (number)  
+                        |-> Current stock (number)  
              
   
-| user accounts roles:  
-| admin - ↓  
-|        |-> crud suppliers  
-|        |-> crud contacts  
-|        |-> crud produtcs  
-|        (inherits) purchasing manager ↓  
-|                         |-> crud cotations  
-|                         |-> consult cotations  
+ user accounts roles:  
+ admin - ↓  
+        |-> crud suppliers  
+        |-> crud contacts  
+        |-> crud produtcs  
+        (inherits) purchasing manager ↓  
+                         |-> crud cotations  
+                         |-> consult cotations  
 </pre>
   
 

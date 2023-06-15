@@ -1,3 +1,4 @@
+<pre>
 | data structures:   
 | Suppliers  ↓  
 |           |-> business name (string)  
@@ -24,9 +25,9 @@
 |        (inherits) purchasing manager ↓  
 |                         |-> crud cotations  
 |                         |-> consult cotations  
+</pre>
   
-  
-  
+
 AT - Desenvolvimento Web com React
 Construir uma aplicação React que implemente o Sistema de Compras do Infnet, conforme elaborado nas aulas.
 

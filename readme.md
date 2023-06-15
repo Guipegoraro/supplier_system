@@ -6,12 +6,11 @@
 |           |-> CNPJ
 |           |-> website (string)  
 |           |-> annotations (string)  
-|           |-> Contacts (object) ↓   
+|           |-> Contacts (array with objects) ↓ (must have option to add as many as the user wants)  
 |                       |-> Telephone (string)  
 |                       |-> Email (string)  
-|                       |-> Address (string)
-|                       |-> custom (obj) (add n+ opt)  
-|           |- Products (object) ↓  
+|                       |-> Address (string))  
+|           |- Products (array with objects) ↓  
 |                       |-> Product name (string)  
 |                       |-> Price (number)  
 |                       |-> Current stock (number)  

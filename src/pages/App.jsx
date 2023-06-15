@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-    {currentUser && currentUser.role === 'admin' && <p>you are admin</p>}
+    {currentUser && currentUser.role === 'admin' ? <p>admin</p> : <p>manager account</p>}
     <UserAccount/>
     <RoutesLinks/>
     <RoutesHandler/>

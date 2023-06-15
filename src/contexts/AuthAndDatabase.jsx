@@ -19,18 +19,33 @@ export function AuthProvider({ children }) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
-
-
-
-
-
-
-
-
-
-
-
+    async function addSupplierToDatabase(supplierForm) {
+        try {
+            await addDoc(collection(database, 'suppliers'), {
+                ...supplierForm,
+            })
+            console.log('supplier added to database')
+        } catch (error) {
+            console.error('failed to add supplier to database: ' + error)
+        }
+    }
 
 
     async function checkIfAdmin(user) {
@@ -135,6 +150,7 @@ export function AuthProvider({ children }) {
         handleLoginForm,
         handleLogOut,
         checkIfAdmin,
+        addSupplierToDatabase,
     };
 
     return (

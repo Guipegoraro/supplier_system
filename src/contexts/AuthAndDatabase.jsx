@@ -30,8 +30,14 @@ export function AuthProvider({ children }) {
 
 
 
-
-
+    async function getSuppliersFromDatabase() {
+        try {
+            const data = await getDocs(database, 'suppliers');
+            return data
+        } catch (error) {
+            console.log(`could not receive suppliers data from database: ${error}`)
+        }
+    }
 
 
 
@@ -151,6 +157,7 @@ export function AuthProvider({ children }) {
         handleLogOut,
         checkIfAdmin,
         addSupplierToDatabase,
+        getSuppliersFromDatabase,
     };
 
     return (

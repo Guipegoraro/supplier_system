@@ -14,11 +14,7 @@ export default function Fornecedores() {
             <AddSupplierForm
               showAddSupplierForm={showAddSupplierForm}
               setShowAddSupplierForm={setShowAddSupplierForm}
-            />
-          ) : (
-            <button onClick={() => setShowAddSupplierForm(true)}>
-              Adicionar Fornecedor
-            </button>
+            />) : (<button onClick={() => setShowAddSupplierForm(true)}>Adicionar Fornecedor</button>
           )}
         </>
       )}

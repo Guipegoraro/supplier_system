@@ -1,7 +1,7 @@
 import '../styles/App.css';
 import RoutesHandler from '../components/RoutesHandler';
 import RoutesLinks from '../components/RoutesLinks';
-import UserAccount from '../components/UserAccount';
+import UserAccount from '../components/user_management/UserAccount';
 import { useAuth } from '../contexts/AuthAndDatabase';
 import { useEffect } from 'react';
 function App() {

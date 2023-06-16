@@ -1,16 +1,15 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 
-export default function ContactDescription({ contact }) {
-    const { telephone, email, address, annotations } = contact;
+export default function ContactDescription({ product }) {
+    const { currentStock, productPriceBuy} = product;
+    
     return (
         <div>
-            <p>Telefone: {telephone}</p>
-            <p>Email: {email}</p>
-            <p>Endereço: {address}</p>
-            <p>Anotações: {annotations}</p>
-            <button>Editar este contato</button> {/*  ADD FUNCTION TO EDIT CONTACT */}
-            <button>Excluir este contato</button> {/* ADD FUNCTION TO DELETE CONTACT */}
+            <p>Preço Compra: {productPriceBuy}</p>
+            <p>Estoque atual: {currentStock}</p>
+            <button>Editar este produto</button> {/*  ADD FUNCTION TO EDIT CONTACT */}
+            <button>Excluir este produto</button> {/* ADD FUNCTION TO DELETE CONTACT */}
         </div>
     )
 }

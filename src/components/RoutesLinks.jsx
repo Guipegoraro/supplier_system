@@ -15,6 +15,9 @@ export default function RoutesLinks() {
     </li>
       <li>
         <Link to='/Fornecedores' > Fornecedores </Link>
+        <Link to='/Produtos' > Produtos </Link>
+        <Link to='/Cotacoes' > Cotacoes </Link>
+        <Link to='/Contatos' > Contatos </Link>
       </li>
     </ul>
   </nav>

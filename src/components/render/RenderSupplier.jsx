@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import RenderProduct from './RenderProduct';
+import RenderContact from './RenderContact';
 
 function SupplierRender({ supplier }) {
   const [showContacts, setShowContacts] = useState(false);
@@ -18,21 +19,13 @@ function SupplierRender({ supplier }) {
       <button onClick={() => setShowProducts(!showProducts)}>Mostrar produtos</button>
 
       {showContacts && supplier.contacts.map((contact, index) => {
-        return(
-          <RenderProduct contact={contact} key={index} index={index} />
+        return (
+          <RenderContact contact={contact} key={index} index={index} />
         )
       })}
-      
       {showProducts && supplier.products.map((product, index) => {
-        return(
-          <div className="product" key={index}>
-            <p>Nome do produto: {product.productName}</p>
-            <p>Preço de compra: {product.productPriceBuy}</p>
-            <p>Preço de venda: {product.productPriceSell}</p>
-            <p>Estoque atual: {product.currentStock}</p>
-            <button>Editar este produto</button> {/*  ADD FUNCTION TO EDIT PRODUCT */}
-            <button>Excluir este produto</button> {/* ADD FUNCTION TO DELETE PRODUCT */}
-          </div>
+        return (
+          <RenderProduct product={product} key={index} index={index} />
         )
       })}
     </div>

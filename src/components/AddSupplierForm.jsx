@@ -3,7 +3,7 @@ import '../styles/App.css'
 import { useAuth } from '../contexts/AuthAndDatabase';
 
 // eslint-disable-next-line react/prop-types
-export default function AddSupplierForm({ setShowAddSupplierForm }) {
+export default function AddSupplierForm({ setShowAddSupplierForm, getSuppliers }) {
 
   const [supplierFormData, setSupplierFormData] = useState({
     businessName: '',
@@ -22,8 +22,8 @@ export default function AddSupplierForm({ setShowAddSupplierForm }) {
     products: [
       {
         productName: '',
-        productPriceBuy: '',
         currentStock: '',
+        productPriceBuy: '',
         productPriceSell: '',
       }
     ],
@@ -33,8 +33,9 @@ export default function AddSupplierForm({ setShowAddSupplierForm }) {
 
 
   async function handleAddSupplierFormSubmit() {
-    addSupplierToDatabase(supplierFormData);
+    await addSupplierToDatabase(supplierFormData);
     setShowAddSupplierForm(false);
+    getSuppliers();
   }
 
   function handleAddAnotherContact() {
@@ -60,8 +61,9 @@ export default function AddSupplierForm({ setShowAddSupplierForm }) {
         ...supplierFormData.products,
         {
           productName: '',
-          productPrice: '',
           currentStock: '',
+          productPriceBuy: '',
+          productPriceSell: '',
         },
       ],
     });

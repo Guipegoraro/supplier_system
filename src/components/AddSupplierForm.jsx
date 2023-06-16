@@ -31,6 +31,7 @@ export default function AddSupplierForm({ setShowAddSupplierForm }) {
   
   const { addSupplierToDatabase } = useAuth();
 
+
   async function handleAddSupplierFormSubmit() {
     addSupplierToDatabase(supplierFormData);
     setShowAddSupplierForm(false);
@@ -155,10 +156,10 @@ export default function AddSupplierForm({ setShowAddSupplierForm }) {
             <input type='text' name='productName' id={`productName${index}`} value={product.productName} onChange={(event) => handleProductOnChange(event, index)} />
 
             <label htmlFor={`productPriceBuy${index}`}>Preço de compra:</label>
-            <input type='text' name='productPrice' id={`productPrice${index}`} value={product.productPriceBuy} onChange={(event) => handleProductOnChange(event, index)} />
+            <input type='text' name='productPriceBuy' id={`productPriceBuy${index}`} value={product.productPriceBuy} onChange={(event) => handleProductOnChange(event, index)} />
 
             <label htmlFor={`productPriceSell${index}`}>Preço de venda:</label>
-            <input type='text' name='currentStock' id={`productPriceSell${index}`} value={product.productPriceSell} onChange={(event) => handleProductOnChange(event, index)} />
+            <input type='text' name='productPriceSell' id={`productPriceSell${index}`} value={product.productPriceSell} onChange={(event) => handleProductOnChange(event, index)} />
 
             <label htmlFor={`currentStock${index}`}>Estoque atual:</label>
             <input type='text' name='currentStock' id={`currentStock${index}`} value={product.currentStock} onChange={(event) => handleProductOnChange(event, index)} />

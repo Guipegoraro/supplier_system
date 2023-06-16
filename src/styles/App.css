@@ -118,3 +118,18 @@ input {
     background-color: #0069d9;
   }
   
+  .supplier-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .contact, .product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .contact button, .product button {
+    margin-left: 10px;
+  }

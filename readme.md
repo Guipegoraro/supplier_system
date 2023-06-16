@@ -48,7 +48,7 @@ A solução deve incluir os seguintes requisitos e critérios de correção:
 
 3. Criar formulários web usando componentes ReactJS
     Implementação da Autenticação e Criação de Conta pelo Firebase (30%). OK
-    Implementação de Inclusão e Listagem de Fornecedores (60%). TODO LISTING
+    Implementação de Inclusão e Listagem de Fornecedores (60%). OK
     Implementação de Inclusão e Listagem de Contatos (90%).
     Implementação de Exclusão de Fornecedores e Contatos (100%).
 

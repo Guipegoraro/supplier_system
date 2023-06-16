@@ -32,12 +32,16 @@ export function AuthProvider({ children }) {
 
     async function getSuppliersFromDatabase() {
         try {
-            const data = await getDocs(database, 'suppliers');
-            return data
+          const querySnapshot = await getDocs(collection(database, 'suppliers'));
+          const suppliers = querySnapshot.docs.map((doc) => doc.data());
+          console.log('suppliers data received from database');
+          console.log(suppliers);
+          return suppliers;
         } catch (error) {
-            console.log(`could not receive suppliers data from database: ${error}`)
+          console.log(`could not receive suppliers data from database: ${error}`);
+          throw new Error('Failed to retrieve suppliers data from database');
         }
-    }
+      }
 
 
 

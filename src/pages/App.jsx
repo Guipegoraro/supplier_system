@@ -15,10 +15,14 @@ function App() {
 
   return (
     <>
-    {currentUser && currentUser.role === 'admin' ? <p>admin</p> : <p>manager account</p>}
     <UserAccount/>
+    {currentUser && 
+    <>
+    {currentUser && currentUser.role === 'admin' ? <p>admin</p> : <p>manager account</p>}
     <RoutesLinks/>
     <RoutesHandler/>
+    </>
+    }
     </>
   )
 }

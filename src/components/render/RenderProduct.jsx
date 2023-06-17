@@ -6,10 +6,12 @@ export default function RenderProduct({ product, index }) {
   const { productName, productPriceSell } = product;
 
   return (
-    <div className="product">
+    <div className='product'>
+      <div className='productText'>
       <p>Nome do produto: {productName}</p>
       <p>Preço de venda: {productPriceSell}</p>
-      <button onClick={() => setShowMoreInfo(!showMoreInfo)}>{showMoreInfo ? '⇧' : 'Mais informações'}</button>
+      </div>
+      <button onClick={() => setShowMoreInfo(!showMoreInfo)}>{showMoreInfo ? 'Menos informações' : 'Mais informações'}</button>
       {showMoreInfo && <ProductDescription product={product} index={index} />}
     </div>
   )

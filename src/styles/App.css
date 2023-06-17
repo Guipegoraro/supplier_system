@@ -36,7 +36,7 @@ input {
   }
   
   .fornecedores button:hover {
-    background-color: #0069d9;
+    background-color: #007bff;
   }
 
 .supplierForm {
@@ -81,7 +81,7 @@ input {
   }
   
   .supplierForm button:hover {
-    background-color: #0069d9;
+    background-color: #007bff;
   }
   
   .contactForm {
@@ -115,7 +115,7 @@ input {
   }
   
   .contactForm button:hover {
-    background-color: #0069d9;
+    background-color: #007bff;
   }
   
   .supplier-container {
@@ -123,13 +123,84 @@ input {
     padding: 10px;
     margin-bottom: 10px;
   }
-  
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 20px;
+  }
   .contact, .product {
     border: 1px solid #ccc;
     padding: 10px;
     margin-top: 10px;
   }
   
-  .contact button, .product button {
-    margin-left: 10px;
+  .contact button{
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+  }
+  .navLink {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .navLink ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navLink li {
+    margin-right: 10px;
+  }
+  
+  .navLink a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+  }
+  
+  .navLink a:hover {
+    background-color: #555;
+    border-radius: 5px;
+  }
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 20px;
+  }
+  
+  .product button {
+    padding: 5px 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+  }
+  
+  .product button:hover {
+    background-color: #007bff;
+  }
+  .supplierButtons {
+    display: flex;
+    justify-content: space-evenly;;
+
+  }
+  .supplierButtons button {
+    margin: 10px;
   }

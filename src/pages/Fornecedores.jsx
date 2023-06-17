@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import AddSupplierForm from "../components/AddSupplierForm";
 import { useAuth } from "../contexts/AuthAndDatabase";
-import SupplierRender from "../components/render/RenderSupplier";
+import RenderSupplier from "../components/render/RenderSupplier";
 
 export default function Fornecedores() {
 
   const [showAddSupplierForm, setShowAddSupplierForm] = useState(false);
   const { getSuppliersFromDatabase, currentUser } = useAuth();
   const [suppliers, setSuppliers] = useState([]);
+
+  
   async function getSuppliers() {
     const suppliers = await getSuppliersFromDatabase();
     setSuppliers(suppliers);
@@ -24,6 +26,7 @@ export default function Fornecedores() {
 
   return (
     <div className="fornecedores">
+      <h1>Fornecedores</h1>
       {currentUser?.role === "admin" && (
         <>
           {showAddSupplierForm ? (
@@ -37,7 +40,7 @@ export default function Fornecedores() {
       )}
       {suppliers?.map((supplier,index) => {
         return(
-          <SupplierRender key={index} supplier={supplier}/>
+          <RenderSupplier getSuppliers={getSuppliers} key={index} supplier={supplier}/>
         )
       })}
     </div>

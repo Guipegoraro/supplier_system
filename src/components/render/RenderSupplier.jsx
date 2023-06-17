@@ -2,10 +2,24 @@
 import React, { useState } from 'react';
 import RenderProduct from './RenderProduct';
 import RenderContact from './RenderContact';
-
-function SupplierRender({ supplier }) {
+import { useAuth } from '../../contexts/AuthAndDatabase';
+function RenderSupplier({ supplier, getSuppliers }) {
   const [showContacts, setShowContacts] = useState(false);
   const [showProducts, setShowProducts] = useState(false);
+
+  const { deleteSupplierFromDatabase } = useAuth();
+
+    
+  function askForConfirmation() {
+    const confirmation = window.confirm('Tem certeza que deseja excluir este fornecedor?');
+    if (confirmation) {
+      deleteSupplierFromDatabase(supplier);
+      getSuppliers();
+    }
+  }
+
+
+
 
   return (
     <div className="supplier-container">
@@ -13,11 +27,12 @@ function SupplierRender({ supplier }) {
       <p>Ramo Principal: {supplier.mainBusiness}</p>
       <p>CNPJ: {supplier.cnpj}</p>
       <p>Observações: {supplier.annotations}</p>
-      <button>Excluir este fornecedor (os produtos também serão excluidos)</button>
-      <button>Editar este fornecedor</button>
-      <button onClick={() => setShowContacts(!showContacts)}>Mostrar contatos</button>
-      <button onClick={() => setShowProducts(!showProducts)}>Mostrar produtos</button>
-
+      <div className="supplierButtons">
+        <button onClick={askForConfirmation}>Excluir este fornecedor </button>
+        <button>Editar este fornecedor</button>
+        <button onClick={() => setShowContacts(!showContacts)}>Mostrar contatos</button>
+        <button onClick={() => setShowProducts(!showProducts)}>Mostrar produtos</button>
+      </div>
       {showContacts && supplier.contacts.map((contact, index) => {
         return (
           <RenderContact contact={contact} key={index} index={index} />
@@ -32,4 +47,4 @@ function SupplierRender({ supplier }) {
   );
 }
 
-export default SupplierRender;
+export default RenderSupplier;

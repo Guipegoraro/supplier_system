@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState, createContext } from 'react';
 import { auth, database } from '../../firebase';
 import { createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword } from 'firebase/auth';
-import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
-
+import { collection, addDoc, query, where, getDocs, deleteDoc, setDoc, doc } from "firebase/firestore";
 const AuthAndDatabase = createContext();
 //todo add user data to database on account creation
 //todo add role to database
@@ -20,13 +19,14 @@ export function AuthProvider({ children }) {
 
 
 
-
-
-
-
-
-
-
+    async function deleteSupplierFromDatabase(supplier) {
+        try {
+            await deleteDoc(doc(database, 'suppliers', supplier.businessName))
+            console.log('supplier deleted from database')
+        } catch (error) {
+            console.error('failed to delete supplier from database: ' + error)
+        }
+    }
 
 
 
@@ -46,10 +46,10 @@ export function AuthProvider({ children }) {
 
 
     
-    async function addSupplierToDatabase(supplierForm) {
+    async function addSupplierToDatabase(supplier) {
         try {
-            await addDoc(collection(database, 'suppliers'), {
-                ...supplierForm,
+            await setDoc(doc(database, 'suppliers', supplier.businessName), {
+                ...supplier,
             })
             console.log('supplier added to database')
         } catch (error) {
@@ -63,6 +63,7 @@ export function AuthProvider({ children }) {
         try {
             const queryObject = query(collection(database, 'admin'), where('email', '==', user.email))
             const querySnapshot = await getDocs(queryObject);
+            console.log(querySnapshot)
             if( querySnapshot.size > 0 ) {
                 console.log(`user ${user.email} is an admin`)
                 setCurrentUser({...user, role: 'admin'})
@@ -162,6 +163,7 @@ export function AuthProvider({ children }) {
         checkIfAdmin,
         addSupplierToDatabase,
         getSuppliersFromDatabase,
+        deleteSupplierFromDatabase,
     };
 
     return (

@@ -1,15 +1,16 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import RenderProduct from './RenderProduct';
 import RenderContact from './RenderContact';
 import { useAuth } from '../../contexts/AuthAndDatabase';
 function RenderSupplier({ supplier, getSuppliers }) {
+
+
   const [showContacts, setShowContacts] = useState(false);
   const [showProducts, setShowProducts] = useState(false);
 
   const { deleteSupplierFromDatabase } = useAuth();
 
-    
+
   function askForConfirmation() {
     const confirmation = window.confirm('Tem certeza que deseja excluir este fornecedor?');
     if (confirmation) {
@@ -17,8 +18,6 @@ function RenderSupplier({ supplier, getSuppliers }) {
       getSuppliers();
     }
   }
-
-
 
 
   return (

@@ -1,3 +1,4 @@
+import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from '../pages/Home'
 import Fornecedores from '../pages/Fornecedores'
@@ -15,7 +16,7 @@ export default function RoutesHandler() {
       <Route path='/Contatos' element={<Contatos />} />
       <Route path='/Cotacoes' element={<Cotacoes />} />
       <Route path='/Produtos' element={<Produtos />} />
-      <Route path='*' element={<NotFound/>} />
+      <Route path='*' element={<NotFound />} />
     </Routes>
   )
 }

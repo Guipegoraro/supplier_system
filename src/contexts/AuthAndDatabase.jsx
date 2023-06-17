@@ -1,18 +1,14 @@
-import { useContext, useEffect, useState, createContext } from 'react';
+import React, { useContext, useEffect, useState, createContext } from 'react';
 import { auth, database } from '../../firebase';
 import { createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword } from 'firebase/auth';
 import { collection, addDoc, query, where, getDocs, deleteDoc, setDoc, doc } from "firebase/firestore";
 const AuthAndDatabase = createContext();
-//todo add user data to database on account creation
-//todo add role to database
-//todo on login retrieve user data from database (use userId)
 
 
-// eslint-disable-next-line react-refresh/only-export-components
+
 export function useAuth() {
     return useContext(AuthAndDatabase)
 }
-// eslint-disable-next-line react/prop-types
 export function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState(false);
 
@@ -22,7 +18,6 @@ export function AuthProvider({ children }) {
     async function deleteSupplierFromDatabase(supplier) {
         try {
             await deleteDoc(doc(database, 'suppliers', supplier.businessName))
-            console.log('supplier deleted from database')
         } catch (error) {
             console.error('failed to delete supplier from database: ' + error)
         }
@@ -32,26 +27,22 @@ export function AuthProvider({ children }) {
 
     async function getSuppliersFromDatabase() {
         try {
-          const querySnapshot = await getDocs(collection(database, 'suppliers'));
-          const suppliers = querySnapshot.docs.map((doc) => doc.data());
-          console.log('suppliers data received from database');
-          console.log(suppliers);
-          return suppliers;
+            const querySnapshot = await getDocs(collection(database, 'suppliers'));
+            const suppliers = querySnapshot.docs.map((doc) => doc.data());
+            return suppliers;
         } catch (error) {
-          console.log(`could not receive suppliers data from database: ${error}`);
-          throw new Error('Failed to retrieve suppliers data from database');
+            console.error(`could not receive suppliers data from database: ${error}`);
         }
-      }
+    }
 
 
 
-    
+
     async function addSupplierToDatabase(supplier) {
         try {
             await setDoc(doc(database, 'suppliers', supplier.businessName), {
                 ...supplier,
             })
-            console.log('supplier added to database')
         } catch (error) {
             console.error('failed to add supplier to database: ' + error)
         }
@@ -59,23 +50,22 @@ export function AuthProvider({ children }) {
 
 
     async function checkIfAdmin(user) {
-        if ( user ){
-        try {
-            const queryObject = query(collection(database, 'admin'), where('email', '==', user.email))
-            const querySnapshot = await getDocs(queryObject);
-            console.log(querySnapshot)
-            if( querySnapshot.size > 0 ) {
-                console.log(`user ${user.email} is an admin`)
-                setCurrentUser({...user, role: 'admin'})
+        if (user) {
+            try {
+                const queryObject = query(collection(database, 'admin'), where('email', '==', user.email))
+                const querySnapshot = await getDocs(queryObject);
+                console.log(querySnapshot)
+                if (querySnapshot.size > 0) {
+                    setCurrentUser({ ...user, role: 'admin' })
+                }
+                else {
+                    setCurrentUser({ ...user, role: 'manager' })
+                }
+            } catch (error) {
+                console.error('failed to determine if user is admin: ' + error)
             }
-            else {
-                console.log(`user ${user.email} is a manager`)
-                setCurrentUser({...user, role: 'manager'})
-            }
-        } catch (error) {
-            console.error('failed to determine if user is admin: ' + error)
-        }}
-}
+        }
+    }
 
     async function addUserToDatabase(email, role) {
         try {
@@ -89,8 +79,6 @@ export function AuthProvider({ children }) {
                     email,
                 })
             }
-            console.log('user ' + email + ' added to database, role: ' + role)
-
         } catch (error) {
             alert('error adding user to database' + error)
         }
@@ -139,7 +127,6 @@ export function AuthProvider({ children }) {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(async (user) => {
             await checkIfAdmin(user);
@@ -147,8 +134,8 @@ export function AuthProvider({ children }) {
                 setCurrentUser(user);
             }
         });
-          return unsubscribe;
-        }, []);
+        return unsubscribe;
+    }, []);
 
 
 

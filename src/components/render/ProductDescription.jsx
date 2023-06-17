@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
 
 export default function ContactDescription({ product }) {
     const { currentStock, productPriceBuy} = product;
+    
     
     return (
         <div className='productDescription'>

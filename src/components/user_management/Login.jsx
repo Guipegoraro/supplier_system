@@ -1,4 +1,4 @@
-
+import React from "react"
 
 export default function Login({ handleLoginForm, loading }) {
 
@@ -8,10 +8,10 @@ export default function Login({ handleLoginForm, loading }) {
             <h4>Log in:</h4>
             <form className='userAuthenticationForm' onSubmit={event => handleLoginForm(event)}>
                 <label htmlFor='email'>email:</label>
-                <input type='text' id='email' name='email' />
+                <input required type='text' id='email' name='email' />
                 <label htmlFor='password'>Password:</label>
-                <input type='text' id='password' name='password' />
-                <button disabled={loading}  type='submit'>Login</button>
+                <input required type='text' id='password' name='password' />
+                <button disabled={loading} type='submit'>Login</button>
             </form>
         </div>
     )

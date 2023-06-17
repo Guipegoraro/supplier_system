@@ -1,206 +1,214 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .userAuthenticationForm {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
 }
 
 form {
-    padding: 10px;
-    margin: 10px;
+  padding: 10px;
+  margin: 10px;
 }
 
 input {
-    margin: 5px;
+  margin: 5px;
 }
 
 .fornecedores {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .fornecedores button {
-    padding: 5px 10px;
-    margin-top: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .fornecedores button:hover {
-    background-color: #007bff;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.fornecedores button {
+  padding: 5px 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fornecedores button:hover {
+  background-color: #007bff;
+}
 
 .supplierForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .supplierForm form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 400px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .supplierForm label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .supplierForm input,
-  .supplierForm textarea {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .supplierForm button {
-    padding: 5px 10px;
-    margin-top: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .supplierForm button:hover {
-    background-color: #007bff;
-  }
-  
-  .contactForm {
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .contactForm label {
-    margin-bottom: 5px;
-  }
-  
-  .contactForm input,
-  .contactForm textarea {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .contactForm button {
-    padding: 5px 10px;
-    margin-top: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .contactForm button:hover {
-    background-color: #007bff;
-  }
-  
-  .supplier-container {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    margin-top: 20px;
-  }
-  .contact, .product {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 10px;
-  }
-  
-  .contact button{
-    padding: 5px 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
 
-  }
-  .navLink {
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-  }
-  
-  .navLink ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navLink li {
-    margin-right: 10px;
-  }
-  
-  .navLink a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px;
-  }
-  
-  .navLink a:hover {
-    background-color: #555;
-    border-radius: 5px;
-  }
-  .product {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    margin-top: 20px;
-  }
-  
-  .product button {
-    padding: 5px 10px;
-    margin-top: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.supplierForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-  }
-  
-  .product button:hover {
-    background-color: #007bff;
-  }
-  .supplierButtons {
-    display: flex;
-    justify-content: space-evenly;;
+.supplierForm label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
 
-  }
-  .supplierButtons button {
-    margin: 10px;
-  }
+.supplierForm input,
+.supplierForm textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.supplierForm button {
+  padding: 5px 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.supplierForm button:hover {
+  background-color: #007bff;
+}
+
+.contactForm {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contactForm label {
+  margin-bottom: 5px;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contactForm button {
+  padding: 5px 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contactForm button:hover {
+  background-color: #007bff;
+}
+
+.supplier-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 20px;
+}
+
+.contact,
+.product {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.contact button {
+  padding: 5px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.navLink {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.navLink ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink li {
+  margin-right: 10px;
+}
+
+.navLink a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.navLink a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 20px;
+}
+
+.product button {
+  padding: 5px 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.product button:hover {
+  background-color: #007bff;
+}
+
+.supplierButtons {
+  display: flex;
+  justify-content: space-evenly;
+  ;
+
+}
+
+.supplierButtons button {
+  margin: 10px;
+}

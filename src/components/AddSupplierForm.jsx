@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import '../styles/App.css'
 import { useAuth } from '../contexts/AuthAndDatabase';
 
-// eslint-disable-next-line react/prop-types
 export default function AddSupplierForm({ setShowAddSupplierForm, getSuppliers }) {
 
   const [supplierFormData, setSupplierFormData] = useState({
@@ -28,7 +27,7 @@ export default function AddSupplierForm({ setShowAddSupplierForm, getSuppliers }
       }
     ],
   });
-  
+
   const { addSupplierToDatabase } = useAuth();
 
 

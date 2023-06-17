@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import AddSupplierForm from "../components/AddSupplierForm";
 import { useAuth } from "../contexts/AuthAndDatabase";
 import RenderSupplier from "../components/render/RenderSupplier";
@@ -9,16 +9,16 @@ export default function Fornecedores() {
   const { getSuppliersFromDatabase, currentUser } = useAuth();
   const [suppliers, setSuppliers] = useState([]);
 
-  
+
   async function getSuppliers() {
     const suppliers = await getSuppliersFromDatabase();
     setSuppliers(suppliers);
   }
-    
-    
-    
+
+
+
   useEffect(() => {
-    getSuppliers(); 
+    getSuppliers();
   }, []);
 
 
@@ -38,9 +38,9 @@ export default function Fornecedores() {
           )}
         </>
       )}
-      {suppliers?.map((supplier,index) => {
-        return(
-          <RenderSupplier getSuppliers={getSuppliers} key={index} supplier={supplier}/>
+      {suppliers?.map((supplier, index) => {
+        return (
+          <RenderSupplier getSuppliers={getSuppliers} key={index} supplier={supplier} />
         )
       })}
     </div>

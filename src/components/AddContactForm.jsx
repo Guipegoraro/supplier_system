@@ -62,7 +62,6 @@ export default function AddContactForm({ closeForm }) {
         });
     }
 
-
     function handleContactOnChange(event, index) {
         const updatedContacts = [...supplierFormData.contacts];
         updatedContacts[index][event.target.name] = event.target.value;
@@ -80,6 +79,7 @@ export default function AddContactForm({ closeForm }) {
             contacts: updatedContacts
         });
     }
+
     function handleSupplierSelect(event) {
         suppliers.filter((supplier, index) => {
             if (index == event.target.value) {

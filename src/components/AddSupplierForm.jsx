@@ -30,11 +30,19 @@ export default function AddSupplierForm({ setShowAddSupplierForm, getSuppliers }
 
   const { addSupplierToDatabase } = useAuth();
 
+ function validateForm() {
+    return supplierFormData.businessName.length > 0 && supplierFormData.cnpj.length > 0;
+ }
+
 
   async function handleAddSupplierFormSubmit() {
+    if (validateForm()) {
     await addSupplierToDatabase(supplierFormData);
     setShowAddSupplierForm(false);
     getSuppliers();
+    } else {
+      alert("Preencha ao menos razão social e CNPJ");
+    }
   }
 
   function handleAddAnotherContact() {
